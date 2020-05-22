@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     private AudioSource aud;
     private int ballCount = 5;
-    private int score;
+    public int score;
 
     private ThreePoint threePoint;
 
@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+
         if (threePoint.inThreePoint)
         {
             score += 3;
@@ -45,7 +47,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-        score+=2;
+            score += 2;
             aud.PlayOneShot(soundTwo);
         }
         textScore.text = "分數：" + score;
